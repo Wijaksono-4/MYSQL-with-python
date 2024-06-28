@@ -32,11 +32,13 @@ create_table_pizza_order = '''CREATE TABLE pizza_order (
 cursor.execute(create_table_pizza_order)
 conn.commit()
 
-create_table_pizza_store = '''CREATE TABLE pizza store (
+create_table_pizza_store = '''CREATE TABLE pizza_store (
     store_id varchar(10) PRIMARY KEY,
     store_name varchar(50),
     store_city varchar(20)
 )'''
+cursor.execute(create_table_pizza_store)
+conn.commit()
 
 create_table_pizza_name = '''CREATE TABLE pizza_name (
     pizza_id varchar(10) PRIMARY KEY, 
@@ -47,7 +49,7 @@ cursor.execute(create_table_pizza_name)
 conn.commit()
 
 create_table_pizza_ingredients = '''CREATE TABLE pizza_ingredients (
-    pizza_name varchar(100), 
+    pizza_name varchar(100) PRIMARY KEY, 
     pizza_category varchar(10), 
     pizza_ingredients varchar(1000)
 )'''
