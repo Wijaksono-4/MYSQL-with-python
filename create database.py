@@ -35,15 +35,15 @@ conn.commit()
 create_table_pizza_store = '''CREATE TABLE pizza_store (
     store_id varchar(10) PRIMARY KEY,
     store_name varchar(50),
-    store_city varchar(20)
+    store_city varchar(20) NOT NULL
 )'''
 cursor.execute(create_table_pizza_store)
 conn.commit()
 
-create_table_pizza_name = '''CREATE TABLE pizza_name (
+create_table_pizza_name = '''CREATE TABLE pizza_size_name (
     pizza_id varchar(10) PRIMARY KEY, 
     pizza_size varchar(3), 
-    pizza_name varchar(50)
+    pizza_name varchar(50) NOT NULL
 )'''
 cursor.execute(create_table_pizza_name)
 conn.commit()
@@ -51,7 +51,7 @@ conn.commit()
 create_table_pizza_ingredients = '''CREATE TABLE pizza_ingredients (
     pizza_name varchar(100) PRIMARY KEY, 
     pizza_category varchar(10), 
-    pizza_ingredients varchar(1000)
+    pizza_ingredients varchar(1000) NOT NULL
 )'''
 cursor.execute(create_table_pizza_ingredients)
 conn.commit()
